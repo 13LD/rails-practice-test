@@ -36,6 +36,21 @@ gem 'jbuilder', '~> 2.5'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
+# Use Uglifier as compressor for JavaScript assets
+gem 'uglifier', '>= 1.3.0'
+
+# Use jquery as the JavaScript library
+gem 'jquery-rails'
+gem 'merit'
+# Used to implement at.js for auto complete mentions/emojis
+gem 'jquery-atwho-rails'
+
+gem 'semantic-ui-sass'
+# Use twitter bootstrap sass
+gem 'bootstrap-sass', '~> 3.2.0'
+gem 'autoprefixer-rails'
+gem 'font-awesome-rails'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
