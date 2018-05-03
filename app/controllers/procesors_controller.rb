@@ -14,6 +14,7 @@ class ProcesorsController < ApplicationController
     f_path = str.slice(0...(str.index('.zip')))
     system("cd #{Rails.root}/public#{f_path} && rails_best_practices -f html .")
     system("open #{Rails.root}/public#{f_path}/rails_best_practices_output.html")
+    redirect_to procesors_path
   end
 
   # GET /procesors/new
@@ -35,7 +36,7 @@ class ProcesorsController < ApplicationController
         system("open #{Rails.root}/public/#{@procesor.document.url(:original, false)}")
 
 
-        format.html { redirect_to @procesor, notice: 'Procesor was successfully created.' }
+        format.html { redirect_to procesors_path, notice: 'Procesor was successfully created.' }
         format.json { render :show, status: :created, location: @procesor }
       else
         format.html { render :new }

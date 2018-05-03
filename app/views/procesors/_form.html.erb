@@ -1,5 +1,5 @@
 
-<%= form_for @procesor, :html => { :multipart => true } do |form| %>
+<%= form_for @procesor, :html => { :multipart => true }, :class => "ui grid " do |form| %>
     <% if @procesor.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@procesor.errors.count, "error") %> prohibited this procesor from being saved:</h2>
@@ -12,17 +12,19 @@
     </div>
   <% end %>
 
-  <div class="ui inverted segment">
-    <h1>New Example</h1>
-      <div class="ui inverted form">
-          <div class="field">
-            <%= form.label :document %>
-            <%= form.file_field :document %>
+  <div class="ui four wide segment ">
+    <div class="ui red message">
+      <h4 class="ui header"><i class="star icon"></i>New Application Test</h4>
+    </div>
+      <div class="ui inverted four wide column">
+          <div class="field four wide column">
+            <%= form.label :document, :class => "ui red header" %>
+            <%= form.file_field :document, :class => "ui inverted red button" %>
+            <%= form.submit "Submit", :class => "ui teal button"%>
+            <%= link_to 'Back', procesors_path, :class => "ui green button" %>
+
           </div>
-          <div class="field">
-            <%= form.label "Submit" %>
-            <%= form.submit %>
-          </div>
+
       </div>
     </div>
 

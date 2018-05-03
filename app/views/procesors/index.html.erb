@@ -1,27 +1,31 @@
 <p id="notice"><%= notice %></p>
+<form class="ui form">
 
-<h1>Procesors</h1>
+  <div class="ui red message">
+    <h4 class="ui dividing header"><i class="star icon"></i>Apps</h4>
+    <br>
+    <%= link_to 'Home', root_path, class: "ui teal button" %>
+    <%= link_to 'Add new test application', new_procesor_path, class: "ui green button" %>
 
-<table>
+  </div>
+
+
+<table class="ui table">
   <thead>
-    <tr>
-      <th>File</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <tr><th>File</th>
+    <th colspan="3"></th>
 
-  <tbody>
-    <% @procesors.each do |procesor| %>
-      <tr>
-        <td><%= procesor.document_file_name  %></td>
-        <td><%= link_to 'Show', procesor %></td>
-        <td><%= link_to 'Edit', edit_procesor_path(procesor) %></td>
-        <td><%= link_to 'Destroy', procesor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
+  </tr></thead><tbody>
+<% @procesors.each do |procesor| %>
+  <tr>
+    <td><%= procesor.document_file_name  %></td>
+    <td><%= link_to 'Run', procesor, class: "ui inverted purple button" %></td>
+    <td><%= link_to 'Delete', procesor, class: "ui inverted red button", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</tbody>
 </table>
+</form><br><br><br>
 
-<br>
 
-<%= link_to 'New Procesor', new_procesor_path %>
+
