@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Procesors</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>File</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @procesors.each do |procesor| %>
+      <tr>
+        <td><%= procesor.document_file_name  %></td>
+        <td><%= link_to 'Show', procesor %></td>
+        <td><%= link_to 'Edit', edit_procesor_path(procesor) %></td>
+        <td><%= link_to 'Destroy', procesor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Procesor', new_procesor_path %>

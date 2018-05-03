@@ -1,20 +1,173 @@
-<p id="notice"><%= notice %></p>
 
-<h1>Homes</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div id="m_menu" class="ui floating sidebar inverted vertical  menu">
+</div>
+<div class="pusher">
+  <div id="header">
 
-  <tbody>
-      <tr>
-        test
-      </tr>
-  </tbody>
-</table>
 
-<br>
 
+    <div class="ui progress success">
+    </div>
+
+    <!--Note that everything in the body must be in the "pusher"-->
+    <h2 id="News" class="ui center aligned icon  inverted huge header">
+      <i class="circular newspaper red inverted icon "></i>
+      <div class="content red">
+        Rails Practices
+      </div>
+    </h2 >
+    <div class="ui three column grid">
+      <div class="column">
+        <div class="ui piled segment">
+          <h3 class="ui header red">Installation</h3>
+          <p>Install</p>
+          <code><p>gem install rails_best_practices</p></code>
+          <p></p>
+          <p>or add it to the Gemfile</p>
+          <code><p>gem "rails_best_practices"</p></code>
+          <h3 class="ui header red">Usage</h3>
+          <p>At the root directory of a Rails app, run:</p>
+          <code><p>rails_best_practices .</p></code>
+          <p></p>
+          <p>Or for HTML output:</p>
+          <code><p>rails_best_practices -f html .</p></code>
+          <p></p>
+          <div class="ui basic icon buttons red">
+            <button class="ui button">Try it now!</button>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="ui piled segment">
+          <h3 class="ui header red">Implementation</h3>
+          <p>Move code from Controller to Model</p>
+
+          <p> 1. Move finder to named_scope (rails2 only)</p>
+          <p> 2. Use model association</p>
+          <p> 3. Use scope access</p>
+          <p> 4. Add model virtual attribute</p>
+          <p> 5. Replace complex creation with factory method</p>
+          <p> 6. Move model logic into the Model</p>
+          <p> 7. Check return value of "save!"</p>
+
+          <p> RESTful Conventions</p>
+
+          <p> 1. Overuse route customizations</p>
+          <p> 2. Needless deep nesting</p>
+          <p> 3. Not use default route</p>
+          <p> 4. Restrict auto-generated routes</p>
+
+          <p> Model</p>
+
+          <p> 1. Keep finders on their own model (rails2 only)</p>
+          <p> 2. The law of demeter</p>
+          <p> 3. Use observer</p>
+          <p> 4. Use query attribute</p>
+          <p> 5. Remove unused methods in models</p>
+          <p> 6. Protect mass assignment</p>
+          <p> 7. Destroy return value (disabled by default)</p>
+
+          <p> Mailer</p>
+
+          <p> 1. Use multipart/alternative as content_type of email</p>
+
+          <p> Migration</p>
+
+          <p> 1. Isolating seed data</p>
+          <p> 2. Always add database index</p>
+          <p> 3. Use say with time in migrations</p>
+
+          <p> Controller</p>
+
+          <p> 1. Use `before_filter` (disabled by default)</p>
+          <p> 2. Simplify render in controllers</p>
+          <p> 3. Remove unused methods in controllers</p>
+
+          <p> Helper</p>
+
+          <p> 1. Remove empty helpers</p>
+          <p>  2. Remove unused methods in helpers</p>
+
+          <p> View</p>
+
+          <p> 1. Move code into controller</p>
+          <p>  2. Move code into model</p>
+          <p> 3. Move code into helper</p>
+          <p> 4. Replace instance variable with local variable</p>
+          <p> 5. Simplify render in views</p>
+          <p> 6. Not use time_ago_in_words</p>
+
+          <p>  Deployment</p>
+
+          <p>  1. Dry bundler in Capistrano</p>
+          <p>  2. Speed up assets precompilation with turbo-sprockets-rails3</p>
+
+          <p>  Other</p>
+
+          <p>  1. Remove trailing whitespace</p>
+          <p>  2. Remove tab (disabled by default)</p>
+          <p>  3. Hash syntax (disabled by default)</p>
+          <p>  4. Use parentheses in method definition (disabled by default)</p>
+          <p>  5. Long line (disabled by default)</p>
+          <p>  6. Not rescue exception</p>
+          </p>
+        </div>
+      </div>
+      <div class="column">
+        <div class="ui piled segment">
+          <h3 class="ui header red">Custom Configuration</h3>
+          <p>First run:</p>
+          <code><p>rails_best_practices -g</p></code>
+          <p></p>
+          <p>to generate `rails_best_practices.yml` file.</p>
+          <p>Now you can customize this configuration file. The default configuration is as follows:</p>
+          <p>AddModelVirtualAttributeCheck: { }</p>
+          <p>AlwaysAddDbIndexCheck: { }</p>
+          <p>#CheckSaveReturnValueCheck: { }</p>
+          <p>#CheckDestroyReturnValueCheck: { }</p>
+          <p>DefaultScopeIsEvilCheck: { }</p>
+          <p>DryBundlerInCapistranoCheck: { }</p>
+          <p>#HashSyntaxCheck: { }</p>
+          <p>IsolateSeedDataCheck: { }</p>
+          <p>KeepFindersOnTheirOwnModelCheck: { }</p>
+          <p>LawOfDemeterCheck: { }</p>
+          <p>#LongLineCheck: { max_line_length: 80 }</p>
+          <p>MoveCodeIntoControllerCheck: { }</p>
+          <p>MoveCodeIntoHelperCheck: { array_count: 3 }</p>
+          <p>MoveCodeIntoModelCheck: { use_count: 2 }</p>
+          <p>MoveFinderToNamedScopeCheck: { }</p>
+          <p>MoveModelLogicIntoModelCheck: { use_count: 4 }</p>
+          <p>NeedlessDeepNestingCheck: { nested_count: 2 }</p>
+          <p>NotRescueExceptionCheck: { }</p>
+          <p>NotUseDefaultRouteCheck: { }</p>
+          <p>NotUseTimeAgoInWordsCheck: { }</p>
+          <p>OveruseRouteCustomizationsCheck: { customize_count: 3 }</p>
+          <p>ProtectMassAssignmentCheck: { }</p>
+          <p>RemoveEmptyHelpersCheck: { }</p>
+          <p>#RemoveTabCheck: { }</p>
+          <p>RemoveTrailingWhitespaceCheck: { }</p>
+          <p>RemoveUnusedMethodsInControllersCheck: { except_methods: [] }</p>
+          <p>RemoveUnusedMethodsInHelpersCheck: { except_methods: [] }</p>
+          <p>RemoveUnusedMethodsInModelsCheck: { except_methods: [] }</p>
+          <p>ReplaceComplexCreationWithFactoryMethodCheck: { attribute_assignment_count: 2 }</p>
+          <p>ReplaceInstanceVariableWithLocalVariableCheck: { }</p>
+          <p>RestrictAutoGeneratedRoutesCheck: { }</p>
+          <p>SimplifyRenderInControllersCheck: { }</p>
+          <p>SimplifyRenderInViewsCheck: { }</p>
+          <p>#UseBeforeFilterCheck: { customize_count: 2 }</p>
+          <p>UseModelAssociationCheck: { }</p>
+          <p>UseMultipartAlternativeAsContentTypeOfEmailCheck: { }</p>
+          <p>UseObserverCheck: { }</p>
+          <p>#UseParenthesesInMethodDefCheck: { }</p>
+          <p>UseQueryAttributeCheck: { }</p>
+          <p>UseSayWithTimeInMigrationsCheck: { }</p>
+          <p>UseScopeAccessCheck: { }</p>
+          <p>UseTurboSprocketsRails3Check: { }</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>

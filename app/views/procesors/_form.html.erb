@@ -1,0 +1,30 @@
+
+<%= form_for @procesor, :html => { :multipart => true } do |form| %>
+    <% if @procesor.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@procesor.errors.count, "error") %> prohibited this procesor from being saved:</h2>
+
+      <ul>
+      <% @procesor.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="ui inverted segment">
+    <h1>New Example</h1>
+      <div class="ui inverted form">
+          <div class="field">
+            <%= form.label :document %>
+            <%= form.file_field :document %>
+          </div>
+          <div class="field">
+            <%= form.label "Submit" %>
+            <%= form.submit %>
+          </div>
+      </div>
+    </div>
+
+
+<% end %>

@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>File:</strong>
+  <%= @procesor.document_file_name  %>
+  <%= link_to "Download", @procesor.document.url(:original, false) %>
+</p>
+
+<%= link_to 'Edit', edit_procesor_path(@procesor) %> |
+<%= link_to 'Back', procesors_path %>

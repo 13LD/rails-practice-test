@@ -44,12 +44,12 @@ gem 'jquery-rails'
 gem 'merit'
 # Used to implement at.js for auto complete mentions/emojis
 gem 'jquery-atwho-rails'
-
 gem 'semantic-ui-sass'
 # Use twitter bootstrap sass
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
 gem 'font-awesome-rails'
+gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
