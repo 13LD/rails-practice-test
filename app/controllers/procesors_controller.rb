@@ -10,6 +10,10 @@ class ProcesorsController < ApplicationController
   # GET /procesors/1
   # GET /procesors/1.json
   def show
+    str = @procesor.document.url(:original, false)
+    f_path = str.slice(0...(str.index('.zip')))
+    system("cd #{Rails.root}/public#{f_path} && rails_best_practices -f html .")
+    system("open #{Rails.root}/public#{f_path}/rails_best_practices_output.html")
   end
 
   # GET /procesors/new
@@ -28,6 +32,9 @@ class ProcesorsController < ApplicationController
 
     respond_to do |format|
       if @procesor.save
+        system("open #{Rails.root}/public/#{@procesor.document.url(:original, false)}")
+
+
         format.html { redirect_to @procesor, notice: 'Procesor was successfully created.' }
         format.json { render :show, status: :created, location: @procesor }
       else
@@ -54,6 +61,8 @@ class ProcesorsController < ApplicationController
   def document_download
     @procesor = Procesor.find(params[:id])
     file_path = @procesor.document_file_name
+    str = @procesor.document.url(:original, false)
+    f_path = str.slice(0...(str.index('.zip')))
     if !file_path.nil?
       send_file "#{Rails.root}/public/system/documents/#{@procesor.id}/original/#{file_path}", :x_sendfile => true
     else

@@ -1,0 +1,63 @@
+// Place all the styles related to the FunctionalityTest controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+body {
+  background: grey;
+  min-height: 100%;
+}
+
+#content {
+  max-width: 800px;
+  width: 100%;
+  background: white;
+  padding: 20px;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin: auto;
+  height: 100%;
+}
+
+.btn {
+  margin: 10px;
+  padding: 10px;
+  font-size: 20px;
+  display: inline-block;
+}
+
+form {
+  margin: auto;
+  font-size: 0;
+  line-height: 0;
+  padding: 0;
+
+  label {
+    margin-bottom: 15px;
+
+    &, input {
+      font-size: 20px;
+    }
+  }
+
+  .form-group {
+    display: inline-block;
+    width: 50%;
+  }
+}
+
+textarea {
+  font-size: 24px;
+  max-width: 100%;
+  width: 100%;
+  overflow: hidden;
+  min-height: 500px;
+}
