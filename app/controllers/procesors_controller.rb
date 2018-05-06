@@ -1,5 +1,5 @@
 class ProcesorsController < ApplicationController
-  before_action :set_procesor, only: [:show, :edit, :update, :destroy]
+  before_action :set_procesor, only: [:show, :edit, :destroy]
 
   # GET /procesors
   # GET /procesors.json
@@ -22,9 +22,6 @@ class ProcesorsController < ApplicationController
     @procesor = Procesor.new
   end
 
-  # GET /procesors/1/edit
-  def edit
-  end
 
   # POST /procesors
   # POST /procesors.json
@@ -40,20 +37,6 @@ class ProcesorsController < ApplicationController
         format.json { render :show, status: :created, location: @procesor }
       else
         format.html { render :new }
-        format.json { render json: @procesor.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # PATCH/PUT /procesors/1
-  # PATCH/PUT /procesors/1.json
-  def update
-    respond_to do |format|
-      if @procesor.update(procesor_params)
-        format.html { redirect_to @procesor, notice: 'Procesor was successfully updated.' }
-        format.json { render :show, status: :ok, location: @procesor }
-      else
-        format.html { render :edit }
         format.json { render json: @procesor.errors, status: :unprocessable_entity }
       end
     end
